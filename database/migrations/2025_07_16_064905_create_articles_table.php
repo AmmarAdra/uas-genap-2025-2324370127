@@ -9,7 +9,7 @@ return new class extends Migration {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->string('slug')->unique();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->boolean('is_publish')->default(false);
